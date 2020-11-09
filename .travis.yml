@@ -6,6 +6,10 @@ addons:
     packages:
     - libspdlog-dev
     - doxygen
+    - doxygen-doc
+    - doxygen-latex
+    - doxygen-gui
+    - graphviz
 script:
 - cmake .
 - cmake --build .
