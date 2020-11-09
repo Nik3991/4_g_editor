@@ -4,11 +4,13 @@ compiler: clang
 addons:
   apt:
     packages:
+    - libboost-test-dev
     - libspdlog-dev
     - doxygen
 script:
 - cmake .
 - cmake --build .
+- cmake --build . --target test
 - cmake --build . --target package
 - doxygen Doxyfile
 
@@ -22,7 +24,7 @@ deploy:
     target_branch: gh-pages
     on:
       branch: master
-    
+
   - provider: script
     skip_cleanup: true
     script:
