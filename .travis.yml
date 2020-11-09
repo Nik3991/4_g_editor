@@ -4,13 +4,11 @@ compiler: clang
 addons:
   apt:
     packages:
-    - libboost-test-dev
     - libspdlog-dev
     - doxygen
 script:
 - cmake .
 - cmake --build .
-- cmake --build . --target test
 - cmake --build . --target package
 - doxygen Doxyfile
 
@@ -18,7 +16,7 @@ deploy:
   - provider: pages
     local_dir: html
     skip_cleanup: true
-    repo: Nik3991/Nik3991.github.io
+    repo: Nik3991/4_g_editor
     github_token: $GITHUB_TOKEN
     keep_history: true
     target_branch: gh-pages
