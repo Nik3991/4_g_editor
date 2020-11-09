@@ -2,17 +2,18 @@
 #define GLOOP_H
 
 #include <queue>
+using namespace std;
 
 struct GEvent {
     size_t m_EventCode;
 };
 
-typedef void (*function)(GEvent);
+typedef void (*func_ptr)(GEvent);
 
 class GLoop
 {
 public:
-    GLoop(function _handler) : m_Handler(_handler) {}
+    GLoop(func_ptr _handler) : m_Handler(_handler) {}
 
     int execute()
     {
@@ -43,7 +44,7 @@ public:
     }
 
 private:
-    function m_Handler;
+    func_ptr m_Handler;
     queue<GEvent> m_Events;
 };
 
