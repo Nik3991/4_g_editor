@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.8)
 
 
 #---------------------------------------
@@ -30,18 +30,6 @@ SET(FILES ${PROJECT_SOURCE_DIR}/gcore/GModel.h
 add_executable(${PROJECT_NAME} gcore/main.cpp ${FILES})
 #---------------------------------------
 
-
-target_precompile_headers(4g_editor
-  PUBLIC
-    ${PROJECT_SOURCE_DIR}/gcore/GModel.h
-    ${PROJECT_SOURCE_DIR}/gcore/GPage.h
-    ${PROJECT_SOURCE_DIR}/gcore/GSubscriber.h
-    ${PROJECT_SOURCE_DIR}/gcore/GNotifier.h
-    ${PROJECT_SOURCE_DIR}/gcore/GEntity.h
-    ${PROJECT_SOURCE_DIR}/gcore/GTools.h
-    ${PROJECT_SOURCE_DIR}/gcore/GLoop.h
-    ${PROJECT_SOURCE_DIR}/gobjects/GLine.h
-)
 
 
 #---------------------------------------
